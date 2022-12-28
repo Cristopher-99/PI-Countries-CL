@@ -1,0 +1,20 @@
+.Home{
+    background-position: center center;
+    /* background-repeat:repeat-y; */
+    padding: 0%;
+    width: 100vw;
+    height: 100vh;
+    color: antiquewhite;
+    
+    
+}
+.cards {
+    /* background-color: rgb(89, 229, 152); */
+    /* background-color:transparent red ; */
+    background-image: url("../../imagenes/fondo\ home.jpg");
+    width: auto;
+    height: auto;
+
+
+}
+  

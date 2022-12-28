@@ -1,0 +1,21 @@
+.navBar{
+    background-color: black;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.searchBar{
+    padding: 10px;
+}
+.navContent{
+    
+    justify-content: space-around ;
+    display: inline-flex;
+    width: 100%;
+    padding: 10px;
+}
+.navLink{
+    font-size: 20px;
+    color: white;
+
+    
+}

@@ -1,0 +1,20 @@
+
+.landingPage{
+    background-image: url("../../imagenes/fondo\ landing.jpg");
+    background-position: center ;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: relative;
+}
+.Landingtitle {
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    font-size: 30px;
+
+}
+.landingButton{
+    font-size: 30px;
+}

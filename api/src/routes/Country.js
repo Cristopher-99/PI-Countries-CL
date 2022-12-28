@@ -4,12 +4,6 @@ const axios = require("axios");
 const router= Router(); 
 const { getDbinfo } = require("../controllers/getApiInfo");
 
-// GET /countries:
-// - En una primera instancia deberán traer todos los países desde restcountries
-// y guardarlos en su propia base de datos y luego ya utilizarlos desde allí 
-// (Debe retonar sólo los datos necesarios para la ruta principal)
-// - Obtener un listado de los paises.
-
 // Únicos Endpoints/Flags que pueden utilizar
 // GET https://restcountries.com/v3/all
 // GET https://restcountries.com/v3/name/{name}

@@ -1,0 +1,12 @@
+.paginadoContainer{
+    background-color: rgb(75, 49, 99);
+
+}
+.ul{
+    align-items: center;
+    
+}
+.paginas{
+    padding: 10px;
+    display: inline-block;
+}

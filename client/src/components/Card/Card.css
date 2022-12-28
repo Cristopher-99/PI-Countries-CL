@@ -1,0 +1,20 @@
+
+.cardContainer{
+    width: auto;
+    height: auto;
+    border-radius: 30px;
+    background-color: #12043a;
+
+
+}
+.infoContainer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: flex-end;
+    color: aliceblue;
+
+}
+/* .carImg{
+    
+} */
