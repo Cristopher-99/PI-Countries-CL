@@ -10,6 +10,6 @@ const routerActivity = require("./Activity.js")
 // Ejemplo: router.use('/auth', authRouter);
 
 router.use("/countries", routerCountry);
-router.use("/activities", routerActivity);
+router.use("/activity", routerActivity);
 
 module.exports = router;

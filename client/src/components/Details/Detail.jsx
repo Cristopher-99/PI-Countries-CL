@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getDetail, restartDetail } from "../../redux/actions";
+import { getDetail, restartDetail ,getCountries} from "../../redux/actions";
 import NavBar from "../NavBar/NavBar";
 import './Detail.css'
 
@@ -11,7 +11,8 @@ export default function Detail (props){
     const dispatch = useDispatch()
 
     useEffect(() => {
-      dispatch(restartDetail())
+      // dispatch(restartDetail())
+      dispatch(getCountries());
       dispatch(getDetail(props.match.params.id)) 
     },[dispatch, props.match.params.id])
 
@@ -19,17 +20,14 @@ export default function Detail (props){
 
   return (
     
-     
-    
-    
-    
     <div key={countriesDetail.id} className='detailE'>
 
+      <div>
       <NavBar/>
-
+      </div>
       <div className='detailContainer'>{
-          countriesDetail.length ?
-              <div className='detailContent'>
+        countriesDetail.length ?
+        <div className='detailContent'>
                   <img className='objDetail' src={countriesDetail[0].flag_img} alt='Imagen no encontrada' width='250px' height='175px'/>
                   <h1 className='objDetail'>{countriesDetail[0].name}</h1>
                   <div className='obj2Detail'>
@@ -60,7 +58,8 @@ export default function Detail (props){
                 <p> Loading... </p>
                 </div>
 
-      }</div>
+}</div>
+
     </div>
   );
 };

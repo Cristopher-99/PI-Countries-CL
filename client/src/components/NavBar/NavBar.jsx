@@ -12,9 +12,8 @@ export default function NavBar(){
                 <Link className="navLink" to="/activity">Crear Actividad </Link>
                 <Link className="navLink" to="/activities">Lista de Actividades </Link>
              </div>
-            <div className="searchBar">
-                <SearchBar/>
-            </div>
+                <SearchBar className="searchBar"/>
+       
         </div>
 
     );

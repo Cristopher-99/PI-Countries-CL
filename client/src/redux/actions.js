@@ -35,7 +35,7 @@ export function searchCountries(search){
 export function getActivities(){
     return async function (dispatch){
         try {
-            var json = await axios.get('http://localhost:3001/activities')
+            var json = await axios.get('http://localhost:3001/activity')
             return dispatch({
                 type: GET_ACTIVITIES,
                 payload:json.data
@@ -49,10 +49,10 @@ export function getActivities(){
 export function postActivities(payload){
     return async function(dispatch){
         try {
-            var json = await axios.get('http://localhost:3001/activities'+ payload)
+            await axios.post('http://localhost:3001/activity', payload)
             return dispatch({
                 type: POST_ACTIVITIES,
-                payload:json.data
+   
             })
         } catch (error) {
             console.log(error);

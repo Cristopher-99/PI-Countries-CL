@@ -7,6 +7,11 @@
     
 }
 .paginas{
-    padding: 10px;
     display: inline-block;
+    margin-right: 5px;
+    /* border-radius: 5px; */
+}
+.numeroPaginado{
+    display: inline-block;
+    border-radius: 3px;
 }

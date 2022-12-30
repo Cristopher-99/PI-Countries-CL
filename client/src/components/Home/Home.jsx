@@ -14,8 +14,6 @@ export default function Home(){
            <div className="cards">
              <Cards/>
            </div>
-
-   
         </div>
 
     )

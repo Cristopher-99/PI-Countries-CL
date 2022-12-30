@@ -20,7 +20,7 @@ router.post("/", async(req,res) =>{
         }
     });
     createActivity.addCountries(countries);
-    res.status(200).send("Se creo correctamente la actividad "+ createActivity.name); /// trycatch
+    res.status(200).send(createActivity); // trycatch
 });
 //TODO  GET ---> /activities:
 router.get("/", async(req,res) => {
