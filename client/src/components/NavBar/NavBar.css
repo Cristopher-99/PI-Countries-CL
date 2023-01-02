@@ -1,21 +1,41 @@
 .navBar{
-    background-color: black;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-.searchBar{
-    padding: 10px;
-}
-.navContent{
+    background-color:black;
     
+    
+}
+/* .searchBar{
+    padding: 10px;
+} */
+.navContent{
     justify-content: space-around ;
     display: inline-flex;
     width: 100%;
     padding: 10px;
 }
 .navLink{
-    font-size: 20px;
-    color: white;
+    border-radius: 20px;
+    text-shadow: 3px 2px 1px #9daef5;
+    box-shadow: 6px 5px 24px #666666;
+    font-family: Arial;
+    color: #fafafa;
+    font-size: 27px;
+    padding: 19px;
+    text-decoration: none;
+}
+.Presentacion{
+    color: #ffffff;
+    font-size: 2.0rem;
+    font-style: oblique;
+    text-align:left;
+    text-shadow: 3px 2px 1px #9daef5;
+    padding-bottom: 8px;
+}
 
-    
+.navLink:active{
+    background: #2079b0;
+    background-image: -webkit-linear-gradient(top, #2079b0, #eb94d0);
+}
+.navLink:hover{
+    background: #2079b0;
+    background-image: -webkit-linear-gradient(top, #2079b0, #eb94d0);
 }

@@ -1,18 +1,36 @@
-.cardsContainer{
-    /* background-image: url("../../imagenes/fondo\ home.jpg"); */
-    
-    
-}
+/* .cardsContainer{
+   
+} */
 
 .cardsBox{
-    background-position: center;
-    width: 80%;
-    height: 80%;
-
+    display: flex;
+    flex-wrap: wrap;
+    height: 85%;
+    justify-content: space-evenly;
+    margin: 1rem 0 ;
 }
+
 .Card{
+    padding: 10px;
     
-    padding: 20px;
+}
+.linkCard{
+    text-decoration: none;
+}
+.Card:hover{
+    background-color: aquamarine;
+}
+.filterContainer{
+    padding-top: 10px;
     display: inline-block;
-    align-items: center;
+    
+}
+.filterAndOrder{
+    font-size: 25px;
+    border-radius: 20px;
+    text-shadow: 3px 2px 1px #9daef5;
+    box-shadow: 6px 5px 24px #666666;
+}
+.filterAndOrder:hover{
+    background-color: rgb(192, 157, 226);
 }

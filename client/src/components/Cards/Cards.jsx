@@ -104,12 +104,17 @@ export default function Home(){
         </select>
       </div>
 
-
+      <Paginado
+        countriesPerPage={countriesPerPage}
+        countries={countries.length}
+        paginado={paginado}
+        />
+        
       <div className='cardsBox'>
         {currentCountry?.map((country) => {
           return (
             <div className="Card" key={country.id}>
-              <Link to={"/home/" + country.id}>
+              <Link to={"/home/" + country.id} className="linkCard">
                 <Card
                   name={country.name}
                   flag_img={country.flag_img}
@@ -117,17 +122,12 @@ export default function Home(){
                   capital={country.capital}
                   population={country.population}
                   />
-          
               </Link>
             </div>
           );
         })}
       </div>
-      <Paginado
-        countriesPerPage={countriesPerPage}
-        countries={countries.length}
-        paginado={paginado}
-        />
+
     </div>
   );
 }

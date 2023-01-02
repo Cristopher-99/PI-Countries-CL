@@ -19,6 +19,8 @@ export default function ActivitiesList(){
             <div>
                 <NavBar/>
              </div>
+              <h2 className="ActivityTitle">Actividades Creadas</h2>
+            
             <div className="activityCardListContainer">{
                 activities?.map((acc) =>{
                     return(

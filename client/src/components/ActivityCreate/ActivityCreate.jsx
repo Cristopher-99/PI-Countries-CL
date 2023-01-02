@@ -88,17 +88,17 @@ export default function ActivityCreate(){
     }
 
     return (
-        <div className="">
+        <div className="ActivityCreate">
             <div>
                 <NavBar/>
             </div>
             <div className="activityCardContainer">
                 <div className="activityCard">
-                    <div className="activityTitle">
-                    </div>
 
+                    <div className="activityTitle">
+                        <h2>Crea una Actividad </h2>
+                    </div>
                     <form className="formActivity" onSubmit={handleSubmit}>
-                        <span className="titleCreateActivity">Crea una Actividad </span>
 
                         <div className="inputActivities">
                             <label className="labelActivity"> Nombre </label>
@@ -139,7 +139,8 @@ export default function ActivityCreate(){
                             />
                             {errors.difficulty && <p className="e">{errors.difficulty}</p>}
                         </div>
-                        <div className="seasonInput">
+                        <div className="inputActivities">
+                            <label>Temporada </label>
                             <select 
                             className="i" 
                             name="season" 
@@ -156,7 +157,8 @@ export default function ActivityCreate(){
                         </div>
                         {errors.countryId && <p className="e">{errors.countryId}</p>}
 
-                        <div>
+                        <div className="inputActivities">
+                           <label>Selecciona : </label>
                             <select className="i" onChange={(e)=>handleSelect(e)}>
                                 <option className="op"> Paises </option>
                                 {countries.map((v)=>(

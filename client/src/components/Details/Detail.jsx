@@ -11,19 +11,20 @@ export default function Detail (props){
     const dispatch = useDispatch()
 
     useEffect(() => {
-      // dispatch(restartDetail())
+      dispatch(restartDetail())
+      // dispatch(getCountries())
       dispatch(getDetail(props.match.params.id)) 
     },[dispatch, props.match.params.id])
 
     const countriesDetail = useSelector((state)=> state.detail)
 
   return (
-    
+    <div className="fondoDetail">
+    <div className="Nav">
+      <NavBar/>
+    </div>
     <div key={countriesDetail.id} className='detailE'>
 
-      <div>
-      <NavBar/>
-      </div>
       <div className='detailContainer'>{
         countriesDetail.length ?
         <div className='detailContent'>
@@ -35,7 +36,7 @@ export default function Detail (props){
                   <h2>Continente: {countriesDetail[0].continent}</h2>
                   <h2>Subregion: {countriesDetail[0].subregion}</h2>
                   <h2>Area: {countriesDetail[0].area} km2</h2>
-                  <h2>Poblacion: {countriesDetail[0].population}</h2>
+                  <h2>Poblacion: {countriesDetail[0].population} /habitantes</h2>
                   </div>
                   <div className='activitiesDetail'>  {countriesDetail[0].activities?.map(el=>{
                     return(
@@ -56,8 +57,9 @@ export default function Detail (props){
                 <p> Loading... </p>
                 </div>
 
-}</div>
+      }</div>
 
     </div>
+</div>
   );
 };

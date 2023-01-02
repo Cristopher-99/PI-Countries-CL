@@ -2,14 +2,11 @@
 .cardContainer{
     width: auto;
     height: auto;
-    border-radius: 30px;
+    border-radius: 10px;
     background-color: #12043a;
-
-
-}
-.titleCard{
-    color: antiquewhite;
-
+    text-decoration: none;
+    color: aliceblue;
+    
 }
 .infoContainer{
     display: flex;
@@ -18,7 +15,8 @@
     justify-content: flex-end;
     color: white;
 
+
 }
-.carImg{
-    border-radius: 20px;   
+.cardImg{
+    border-radius: 10px;   
 }

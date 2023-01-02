@@ -15,7 +15,8 @@
     background-image: url("../../imagenes/fondo\ home.jpg");
     width: auto;
     height: auto;
-
-
+}
+.cards:hover{
+    background-color: blueviolet;
 }
   

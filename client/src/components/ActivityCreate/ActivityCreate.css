@@ -1,3 +1,25 @@
+
+.activityCardContainer{
+    background-image: url("../../imagenes/fondo\ home.jpg");
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+
+}
+.activityTitle{
+    text-transform: uppercase;
+    margin: -65px 0 30px 0;
+    display: block;
+    background-color: #080808;
+    color: white;
+}
+.activityCard{
+    background-color: white;
+    display: inline-block;
+    padding: 50px;
+    border-radius: 20px;
+    border-color: #080808;
+}
 .inputActivities{
     font-size: 20px;
 }
@@ -7,3 +29,20 @@
 .e{
     color: red;
 }
+.countrieAndButton{
+    width: 40px;
+    padding: 10px;
+    display: inline-block;
+    border-color: #080808;
+    border-radius: 10px;
+    background-color: rgb(166, 62, 227);
+}
+.btnDelete{
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+}
+.btnDelete:hover{
+    background-color: rgb(25, 196, 219);
+}
+
