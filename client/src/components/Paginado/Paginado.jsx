@@ -4,7 +4,7 @@ import "../Paginado/Paginado.css"
 export default function Paginado({countriesPerPage, countries, paginado}){
     
     const pagesNumbers= []
-    for (let i = 0; i < Math.ceil(countries/countriesPerPage); i++) {
+    for (let i = 1; i < Math.ceil(countries/countriesPerPage); i++) {
         
         pagesNumbers.push(i);
         

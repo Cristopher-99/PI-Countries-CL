@@ -23,7 +23,6 @@ function validate (input){
     return errors;
 }
 
-
 export default function ActivityCreate(){
     const dispatch= useDispatch();
     const history= useHistory();
@@ -37,7 +36,7 @@ export default function ActivityCreate(){
         season: "",
         countryId: [],
     });
-///! CONFIGURE EL USEEFFECT CON EL GET COUNTIRES POR EL ERROR DE CREAR ACTIVIDAD
+/// CONFIGURE EL USEEFFECT CON EL GET COUNTIRES POR EL ERROR DE CREAR ACTIVIDAD
     useEffect(()=> {
         dispatch(getCountries());
         dispatch(getActivities());
@@ -85,7 +84,7 @@ export default function ActivityCreate(){
             season: "",
             countryId: [],
          });
-         history.push("/activity");
+         history.push("/home");
     }
 
     return (
@@ -114,7 +113,7 @@ export default function ActivityCreate(){
                             {errors.name && <p className="e">{errors.name}</p>}
                         </div>
                         <div className="inputActivities">
-                            <label> Duracion </label>
+                            <label> Duracion (hs): </label>
                             <input
                                 className="i"
                                 type="text"
@@ -126,7 +125,8 @@ export default function ActivityCreate(){
                             {errors.duration && <p className="e">{errors.duration}</p>}
                         </div>
                         <div className="inputActivities">
-                            <label> Dificultad </label>
+                            <label> Dificultad: </label>
+                            <label className="numberDificulty">{input.difficulty} </label>
                             <input
                                 className="i"
                                 type="range"
@@ -135,6 +135,7 @@ export default function ActivityCreate(){
                                 max="5"
                                 value={input.difficulty}
                                 onChange={(e)=> handleChange(e)}
+                    
                             />
                             {errors.difficulty && <p className="e">{errors.difficulty}</p>}
                         </div>
@@ -167,7 +168,7 @@ export default function ActivityCreate(){
                         <div className="textArea">
                             {input.countryId.map((country)=>(
                                 <div className="countrieAndButton">
-                                    <input className="btnDelete" type="button" value="X" onclick={()=> handleDelete(country)}/>
+                                    <input className="btnDelete" type="button" value="X" onClick={()=> handleDelete(country)}/>
                                     <p className="pOfCountry">{country}</p>
                                 </div>
                             ))}

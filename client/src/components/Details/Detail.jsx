@@ -12,7 +12,6 @@ export default function Detail (props){
 
     useEffect(() => {
       // dispatch(restartDetail())
-      dispatch(getCountries());
       dispatch(getDetail(props.match.params.id)) 
     },[dispatch, props.match.params.id])
 
@@ -52,9 +51,8 @@ export default function Detail (props){
                       </div>
                       </div>
                   )})}</div>
-  
-  
-              </div> : <div className='loading'>
+                  
+                  </div> : <div className='loading'>
                 <p> Loading... </p>
                 </div>
 

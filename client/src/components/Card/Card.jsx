@@ -9,7 +9,7 @@ export default function Card({name,flag_img,continent, capital,population,id}){
             <div className="infoContainer">
                 <h5>Capital: {capital}</h5>
                 <h5>Continente: {continent}</h5>
-                <h5>Poblacion: {population}</h5>
+                <h5>Poblacion: {population} /hab</h5>
                 
             </div>
         </div>
