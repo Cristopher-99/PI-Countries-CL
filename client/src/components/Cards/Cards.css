@@ -12,13 +12,14 @@
 
 .Card{
     padding: 10px;
-    
+
 }
 .linkCard{
     text-decoration: none;
 }
 .Card:hover{
     background-color: aquamarine;
+    
 }
 .filterContainer{
     padding-top: 10px;

@@ -1,19 +1,28 @@
 
 .cardContainer{
+    display: block;
     width: auto;
     height: auto;
     border-radius: 10px;
     background-color: #12043a;
-    text-decoration: none;
-    color: aliceblue;
+    color: rgb(255, 255, 255);
+    text-shadow: 3px 3px 10px rgb(237, 41, 255);
+    box-shadow: 3px 3px 10px rgb(255, 255, 255);
+    padding: 3px;
     
 }
+.titleCard{
+}
 .infoContainer{
-    display: flex;
+    display: block;
     flex-direction: column;
     text-align: center;
     justify-content: flex-end;
     color: white;
+    text-shadow: 3px 3px 10px rgb(40, 191, 199);
+    text-decoration:underline;
+    
+
 /*asas*/
 
 }
