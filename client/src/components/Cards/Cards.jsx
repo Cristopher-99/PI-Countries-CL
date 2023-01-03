@@ -25,6 +25,26 @@ export default function Home(){
     const paginado = (pageNumber) => {
         setCurrentPage(pageNumber);
       };
+      ///
+      const [items, setItems] = useState([...countries].splice(0, countriesPerPage))
+      // next
+      const nextHandler= () =>{
+        const totalCountries = countries.length;
+        const nextPage = currentPage + 1;
+        const firstIndex= nextPage * countriesPerPage;
+        if(firstIndex=== totalCountries) return;
+        setItems([...countries].splice(firstIndex, countriesPerPage))
+        setCurrentPage(nextPage);
+      }
+      //prev
+      const prevHandler = () =>{
+        const prevPage= currentPage - 1;
+        if(prevPage < 0) return;
+        const firstIndex= prevPage* countriesPerPage;
+        setItems([...countries].splice(firstIndex, countriesPerPage ))
+        setCurrentPage(prevPage);
+      }
+
     function reloadButton(e){
         e.preventDefault()
         dispatch(getCountries())
@@ -108,7 +128,11 @@ export default function Home(){
         countriesPerPage={countriesPerPage}
         countries={countries.length}
         paginado={paginado}
+        nextHandler={nextHandler}
+        prevHandler={prevHandler}
+        items={items}
         />
+
         
       <div className='cardsBox'>
         {currentCountry?.map((country) => {

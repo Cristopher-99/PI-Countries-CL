@@ -1,12 +1,10 @@
 .fondoDetail{
     height: 100%;
     width: 100%;
-    
     background-image: url("../../imagenes/fondo\ home.jpg");
 
 }
 .detailContent{
-
     padding: 10px;
     background-color: rgb(19, 168, 209) ;
     display: inline-block;

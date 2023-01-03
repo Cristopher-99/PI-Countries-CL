@@ -1,13 +1,11 @@
 import React from "react";
 import "../Paginado/Paginado.css"
 
-export default function Paginado({countriesPerPage, countries, paginado}){
-    
+export default function Paginado({countriesPerPage, countries, paginado, prevHandler, nextHandler}){
+
     const pagesNumbers= []
     for (let i = 1; i <= Math.ceil(countries/countriesPerPage); i++) {
-        
         pagesNumbers.push(i);
-        
     }
     return (
         <nav className="paginadoContainer">
@@ -19,6 +17,8 @@ export default function Paginado({countriesPerPage, countries, paginado}){
                 ))}
 
             </ul>
+                <button className="prevPage" onClick={prevHandler}>prev</button>
+                <button className="nextPage" onClick={nextHandler}>next</button>
         </nav>
     )
 

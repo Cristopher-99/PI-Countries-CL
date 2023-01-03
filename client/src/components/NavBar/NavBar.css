@@ -31,10 +31,6 @@
     padding-bottom: 8px;
 }
 
-.navLink:active{
-    background: #2079b0;
-    background-image: -webkit-linear-gradient(top, #2079b0, #eb94d0);
-}
 .navLink:hover{
     background: #2079b0;
     background-image: -webkit-linear-gradient(top, #2079b0, #eb94d0);
