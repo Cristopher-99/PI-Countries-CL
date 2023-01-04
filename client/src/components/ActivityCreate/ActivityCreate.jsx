@@ -7,17 +7,18 @@ import { INVIERNO, VERANO, OTOÑO, PRIMAVERA  } from "../../Const/Const";
 import NavBar from "../NavBar/NavBar"
 import "./ActivityCreate.css"
 
+//Validate
 function validate (input){
     let errors ={};
     if(!input.name){
-        errors.name= "Debe completar este campo";
+        errors.name= "Debe colocar un Nombre";
     } else if (!input.duration){
-        errors.duration= "Debe completar este campo";
+        errors.duration= "Debe colocar una Duracion";
     } else if (!input.difficulty){
         errors.difficulty= "Debe seleccionar la Dificultad";
     } else if (!input.season){
         errors.season= "Debe seleccionar la Temporada";
-    } else if (input.countryId ===[]){
+    } else if (input.countryId === []){
         errors.countryId= "Debe seleccionar un Pais";
     }
     return errors;
@@ -99,19 +100,19 @@ export default function ActivityCreate(){
                         <h2>Crea una Actividad </h2>
                     </div>
                     <form className="formActivity" onSubmit={handleSubmit}>
-
                         <div className="inputActivities">
                             <label className="labelActivity"> Nombre </label>
                             <input 
                                 className="i" 
                                 type= "text" 
-                                placeholder= "Coloque la Actividad..."
+                                placeholder= "Coloque una Actividad..."
                                 value= {input.name}
                                 name= "name"
                                 onChange={handleChange}
                             />
-                            {errors.name && <p className="e">{errors.name}</p>}
+                            {errors.name && <label className="e">{errors.name}</label>}
                         </div>
+
                         <div className="inputActivities">
                             <label> Duracion (hs): </label>
                             <input
@@ -122,58 +123,62 @@ export default function ActivityCreate(){
                                 placeholder="Coloque la Duracion..."
                                 onChange={handleChange}
                             />
-                            {errors.duration && <p className="e">{errors.duration}</p>}
+                            {errors.duration && <label className="e">{errors.duration}</label>}
                         </div>
+
                         <div className="inputActivities">
-                            <label> Dificultad: </label>
-                            <label className="numberDificulty">{input.difficulty} </label>
+                            <label> Dificultad: {input.difficulty}</label>
+                            
                             <input
                                 className="i"
                                 type="range"
                                 name="difficulty"
                                 min="1"
                                 max="5"
+                                inlist="1"
                                 value={input.difficulty}
                                 onChange={(e)=> handleChange(e)}
-                    
                             />
-                            {errors.difficulty && <p className="e">{errors.difficulty}</p>}
+                            {errors.difficulty && <label className="e">{errors.difficulty}</label>}
                         </div>
+
                         <div className="inputActivities">
                             <label>Temporada </label>
                             <select 
-                            className="i" 
-                            name="season" 
-                            value={input.season} 
-                            onChange={(e) => handleChange(e)}
-                            > 
+                                className="i" 
+                                name="season" 
+                                value={input.season} 
+                                onChange={(e) => handleChange(e)}
+                             > 
                                 <option className="op"> Temporada </option>
                                 <option className="op" value={INVIERNO}>Invierno</option>
                                 <option className="op" value={VERANO}>Verano</option>
                                 <option className="op" value={OTOÑO}>Otoño</option>
                                 <option className="op" value={PRIMAVERA}>Primavera</option>
                             </select>
-                            {errors.season && <p className="e">{errors.season}</p>}
+                            {errors.season && <label className="e">{errors.season}</label>}
                         </div>
-                        {errors.countryId && <p className="e">{errors.countryId}</p>}
 
-                        <div className="inputActivities">
+                        <div>
+                          {errors.countryId && <label className="e">{errors.countryId}</label>}
+
+                          <div className="inputActivities">
                            <label>Selecciona : </label>
                             <select className="i" onChange={(e)=>handleSelect(e)}>
                                 <option className="op"> Paises </option>
                                 {countries.map((v)=>(
                                     <option className="op" value={v.id}>{v.name}</option>
-                                ))}
+                                    ))}
                             </select>
-                        </div>
-
-                        <div className="textArea">
+                           </div>
+                           <div className="textArea">
                             {input.countryId.map((country)=>(
                                 <div className="countrieAndButton">
                                     <input className="btnDelete" type="button" value="X" onClick={()=> handleDelete(country)}/>
                                     <p className="pOfCountry">{country}</p>
                                 </div>
-                            ))}
+                             ))}    
+                            </div>
                         </div>
                         <div>
                             <button className="btnActivity" type="submit" >Crear Actividad</button>

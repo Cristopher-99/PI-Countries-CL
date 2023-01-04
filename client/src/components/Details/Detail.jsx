@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getDetail, restartDetail ,getCountries} from "../../redux/actions";
+import { getDetail, restartDetail } from "../../redux/actions";
 import NavBar from "../NavBar/NavBar";
 import './Detail.css'
-
 
 
 export default function Detail (props){
@@ -12,7 +11,6 @@ export default function Detail (props){
 
     useEffect(() => {
       dispatch(restartDetail())
-      // dispatch(getCountries())
       dispatch(getDetail(props.match.params.id)) 
     },[dispatch, props.match.params.id])
 
@@ -25,8 +23,8 @@ export default function Detail (props){
     </div>
     <div key={countriesDetail.id} className='detailE'>
 
-      <div className='detailContainer'>{
-        countriesDetail.length ?
+      <div className='detailContainer'>
+        {countriesDetail.length ?
         <div className='detailContent'>
                   <img className='objDetail' src={countriesDetail[0].flag_img} alt='Imagen no encontrada' width='250px' height='175px'/>
                   <h1 className='objDetail'>{countriesDetail[0].name}</h1>
@@ -47,7 +45,7 @@ export default function Detail (props){
                         <div className='obj3Detail'>
                         <h2>{el.name}</h2>
                         <h3>Dificultad: {el.difficulty}</h3>
-                        <h3>Duracion: {el.duration}</h3>
+                        <h3>Duracion: {el.duration} horas</h3>
                         <h3>Temporada: {el.season}</h3>
                       </div>
                       </div>

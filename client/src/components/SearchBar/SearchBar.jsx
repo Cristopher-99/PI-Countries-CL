@@ -1,6 +1,6 @@
 import {useState} from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { searchCountries, getCountries } from '../../redux/actions'
+import { useDispatch} from 'react-redux'
+import { searchCountries} from '../../redux/actions'
 
 import "./SearchBar.css"
 export default function SearchBar(setCurrentPage){
@@ -17,7 +17,6 @@ export default function SearchBar(setCurrentPage){
         e.preventDefault();
         setSearch(e.target.value);
     }
-
     return(
         <div className="SearchBar">
             <form onSubmit={onSubmit}>

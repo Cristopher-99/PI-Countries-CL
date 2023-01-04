@@ -1,16 +1,11 @@
 const { Router }= require("express");
-const { Country, Activity } = require("../db");
 const axios = require("axios");
 const router= Router(); 
 const { getDbinfo } = require("../controllers/getApiInfo");
 
-// Únicos Endpoints/Flags que pueden utilizar
-// GET https://restcountries.com/v3/all
-// GET https://restcountries.com/v3/name/{name}
-// GET https://restcountries.com/v3/alpha/{code}
 
-//TODO  GET --->  /countries:   
-//TODO  GET --->  /countries?name="...":  
+// GET --->  /countries:   
+// GET --->  /countries?name="...":  
 
 router.get("/", async (req, res) =>{
     // con el Async hago un llamado asincrono a la api.
@@ -22,15 +17,13 @@ router.get("/", async (req, res) =>{
         countryName.length ?
         res.status(200).send(countryName):
         res.status(404).send(`No se encontro el Pais con el nombre "${name}"`);
-    
     }
     else {
         res.status(200).send(countriesTotal);
     }
 });
 
-//TODO  GET ---> /countries/{idPais}:
-
+//GET ---> /countries/{idPais}:
 router.get("/:id", async (req, res)=>{
     const {id} = req.params ;
     let countriesTotal = await getDbinfo();

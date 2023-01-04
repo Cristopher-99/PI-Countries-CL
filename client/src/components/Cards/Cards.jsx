@@ -25,9 +25,8 @@ export default function Home(){
     const paginado = (pageNumber) => {
         setCurrentPage(pageNumber);
       };
-      ///
-      // const lastPage= Math.ceil(countries / countriesPerPage)
-      const [, setItems] = useState([...countries].splice(0, countriesPerPage))
+      
+    const [, setItems] = useState([...countries].splice(0, countriesPerPage))
       // next
     const nextHandler= () =>{
         const totalPages = paginado;
@@ -83,22 +82,14 @@ export default function Home(){
 
       <div className="filterContainer">
       <button id='b1' className='filterAndOrder' onClick={(e)=>reloadButton(e)}>Recargar</button>
-
-      <select className='filterAndOrder'
-            onChange={(e) => {
-            handleSort(e);
-          }}
-        >
+      
+      <select className='filterAndOrder' onChange={(e) => { handleSort(e);}}>
           <option>Filtrar por Orden Alfabetico</option>
           <option value={ASCENDENTE}> A-Z </option>
           <option value={DESCENDENTE}> Z-A </option>
         </select>
 
-        <select className='filterAndOrder'
-          onChange={(e) => {
-            handleSort2(e);
-          }}
-        >
+        <select className='filterAndOrder' onChange={(e) => { handleSort2(e);}}>
           <option>Filtrar por poblacion</option>
           <option value={HIGHER_POPULATION}>Mayor Poblacion</option>
           <option value={LESS_POPULATION}>Menor Poblacion</option>

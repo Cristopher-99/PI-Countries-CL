@@ -6,8 +6,7 @@ import "./NavBar.css"
 export default function NavBar(){
     return (
         <div className="navBar">
-            {/* <h2 className="Presentacion">Poyecto Individual By Cristopher Alexander Lazo</h2> */}
-            
+
             <div className="Presentacion">PI - Henry Countries | By Cristopher Alexander Lazo</div>
 
             <div className="navContent">

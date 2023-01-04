@@ -1,6 +1,7 @@
 import { FILTER_BY_ACTIVITIES, FILTER_BY_CONTINENT, GET_COUNTRIES, ORDER_BY_NAME,
     SEARCH_COUNTRIES , POST_ACTIVITIES,GET_ACTIVITIES,
-    ORDER_BY_POPULATION, HIGHER_POPULATION, DETAIL,RESET } from "../Const/Const";
+    ORDER_BY_POPULATION, DETAIL,RESET } from "../Const/Const";
+    
 import axios from 'axios';
 
 export function getCountries(){

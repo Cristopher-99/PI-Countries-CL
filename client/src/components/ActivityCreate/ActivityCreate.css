@@ -27,6 +27,8 @@
     font-size: 40px;
 }
 .e{
+
+    font-size: 15px;
     color: red;
 }
 .countrieAndButton{
@@ -35,7 +37,7 @@
     display: inline-block;
     border-color: #080808;
     border-radius: 10px;
-    background-color: rgb(166, 62, 227);
+    background-color: rgb(62, 197, 227);
 }
 .btnDelete{
     color: white;
