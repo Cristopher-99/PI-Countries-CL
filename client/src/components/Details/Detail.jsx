@@ -45,7 +45,7 @@ export default function Detail (props){
                         <h2>Actividad</h2>
                         </Link>
                         <div className='obj3Detail'>
-                        <h3>{el.name}</h3>
+                        <h2>{el.name}</h2>
                         <h3>Dificultad: {el.difficulty}</h3>
                         <h3>Duracion: {el.duration}</h3>
                         <h3>Temporada: {el.season}</h3>

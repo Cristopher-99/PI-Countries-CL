@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect} from "react"; // useState
 import {useDispatch, useSelector } from "react-redux";
 import { getActivities } from "../../redux/actions";
 import Activity  from "../Activity/Activity";
@@ -31,7 +31,7 @@ export default function ActivitiesList(){
                                 season={acc.season}
                                 difficulty={acc.difficulty}
                                 />
- 
+                           
                         </div>
                     )
                 })}

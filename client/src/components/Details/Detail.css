@@ -5,16 +5,17 @@
 
 }
 .detailContent{
+    color: rgb(252, 252, 252);
     padding: 10px;
-    background-color: rgb(19, 168, 209) ;
+    background-color:transparent;
     display: inline-block;
-    text-shadow: 3px 3px 10px black;
+    text-shadow: 3px 3px 10px rgb(24, 23, 23);
     box-shadow: 3px 3px 10px #a70efa;
 }
 
-.objDetail{
-    text-shadow: 3px 3px 10px rgb(254, 254, 254);
+.obj3Detail{
+    color: rgb(120, 184, 67);
 }
 .obj2Detail{
-    color: aliceblue;
+    color: rgb(250, 255, 240);
 }

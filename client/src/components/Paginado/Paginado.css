@@ -16,7 +16,26 @@
     box-shadow: 3px 3px 10px #8944ae;
     font-size: 20px;
     border-radius: 5px;
+    cursor: pointer;
+}
+.btnPage{
+    color: white;
+    background-color: #ef0404;
+    box-shadow: 3px 3px 10px #ffffff;
+    font-size: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.currentPage{
+    background-color: transparent;
+    box-shadow: 3px 3px 10px #595757;
+}
+.btnPage:hover{
+    background-color:  aquamarine;
 }
 .numeroPaginado:hover{
     background-color: blueviolet;
   }
+.numeroPaginado:active{
+    fill: red;
+}

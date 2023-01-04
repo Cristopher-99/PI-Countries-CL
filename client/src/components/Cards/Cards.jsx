@@ -7,12 +7,12 @@ import { LESS_POPULATION, HIGHER_POPULATION, ALL, ALL_OF_AFRICA, ALL_OF_NAMERICA
 import Card from "../Card/Card"
 import Paginado from "../Paginado/Paginado"
 import "./Cards.css"
-// pendiente el PAGINADO y el CSS
+
 
 export default function Home(){
+
     const dispatch= useDispatch();
     const activities= useSelector((state) => state.activities);
-
     const countries = useSelector((state) => state.countries);
 
     const [currentPage, setCurrentPage] = useState(1);
@@ -26,35 +26,36 @@ export default function Home(){
         setCurrentPage(pageNumber);
       };
       ///
-      const [items, setItems] = useState([...countries].splice(0, countriesPerPage))
+      // const lastPage= Math.ceil(countries / countriesPerPage)
+      const [, setItems] = useState([...countries].splice(0, countriesPerPage))
       // next
-      const nextHandler= () =>{
-        const totalCountries = countries.length;
+    const nextHandler= () =>{
+        const totalPages = paginado;
         const nextPage = currentPage + 1;
         const firstIndex= nextPage * countriesPerPage;
-        if(firstIndex=== totalCountries) return;
+        if(firstIndex === totalPages) return;
         setItems([...countries].splice(firstIndex, countriesPerPage))
         setCurrentPage(nextPage);
-      }
+    }
       //prev
-      const prevHandler = () =>{
+    const prevHandler = () =>{
         const prevPage= currentPage - 1;
-        if(prevPage < 0) return;
+        if(prevPage <= 0) return;
         const firstIndex= prevPage* countriesPerPage;
         setItems([...countries].splice(firstIndex, countriesPerPage ))
         setCurrentPage(prevPage);
-      }
+     }
 
     function reloadButton(e){
         e.preventDefault()
         dispatch(getCountries())
+        setCurrentPage(1);
         }
     /// Filtrados
     function handleFilterContinent(e) {
         dispatch(filterCountriesByContinent(e.target.value));
         setCurrentPage(1);
     }
-      
     function handleFilterActivity(e) {
       dispatch(filterCountriesByActivity(e.target.value));
       setCurrentPage(1);
@@ -65,13 +66,12 @@ export default function Home(){
       setCurrentPage(1);
       setOrden(`Ordenado ${e.target.value}`);
     }
-  
     function handleSort2(e) {
       e.preventDefault();
       dispatch(orderByPopulation(e.target.value));
       setCurrentPage(1);
       setOrden(`Ordenado ${e.target.value}`);
-    }    
+    }
     ///
     useEffect(() => {
         dispatch(getCountries());
@@ -85,7 +85,7 @@ export default function Home(){
       <button id='b1' className='filterAndOrder' onClick={(e)=>reloadButton(e)}>Recargar</button>
 
       <select className='filterAndOrder'
-          onChange={(e) => {
+            onChange={(e) => {
             handleSort(e);
           }}
         >
@@ -130,10 +130,9 @@ export default function Home(){
         paginado={paginado}
         nextHandler={nextHandler}
         prevHandler={prevHandler}
-        items={items}
+        currentPage={currentPage}
         />
 
-        
       <div className='cardsBox'>
         {currentCountry?.map((country) => {
           return (

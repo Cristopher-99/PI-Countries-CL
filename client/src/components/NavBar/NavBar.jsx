@@ -8,7 +8,7 @@ export default function NavBar(){
         <div className="navBar">
             {/* <h2 className="Presentacion">Poyecto Individual By Cristopher Alexander Lazo</h2> */}
             
-            <div className="Presentacion">Proyecto Individual - Henry Countries | By Cristopher Alexander Lazo</div>
+            <div className="Presentacion">PI - Henry Countries | By Cristopher Alexander Lazo</div>
 
             <div className="navContent">
                 <Link className="navLink" to="/home">Home </Link>

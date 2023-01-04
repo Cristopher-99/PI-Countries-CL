@@ -1,7 +1,7 @@
 import React from "react";
 import "../Paginado/Paginado.css"
 
-export default function Paginado({countriesPerPage, countries, paginado, prevHandler, nextHandler}){
+export default function Paginado({countriesPerPage, countries, paginado, prevHandler, nextHandler,currentPage}){
 
     const pagesNumbers= []
     for (let i = 1; i <= Math.ceil(countries/countriesPerPage); i++) {
@@ -10,15 +10,17 @@ export default function Paginado({countriesPerPage, countries, paginado, prevHan
     return (
         <nav className="paginadoContainer">
             <ul className="ul">
+                
                 {pagesNumbers && pagesNumbers.map (number=>(
                     <li key={number} className="paginas">
-                        <button href onClick={()=>paginado(number)} className="numeroPaginado" >{number}</button>
+                        <button onClick={()=>paginado(number)} className="numeroPaginado" >{number}</button>
                     </li>
                 ))}
 
             </ul>
-                <button className="prevPage" onClick={prevHandler}>prev</button>
-                <button className="nextPage" onClick={nextHandler}>next</button>
+                <button className="btnPage" onClick={prevHandler}>Prev</button>
+                <button className="btnPage" onClick={nextHandler}>Next</button>
+                <p className="currentPage">Pagina: {currentPage} {paginado} </p>
         </nav>
     )
 
