@@ -20,7 +20,7 @@ export default function Paginado({countriesPerPage, countries, paginado, prevHan
             </ul>
                 <button className="btnPage" onClick={prevHandler}>Prev</button>
                 <button className="btnPage" onClick={nextHandler}>Next</button>
-                <p className="currentPage">Pagina: {currentPage} {paginado} </p>
+                <p className="currentPage">Pagina: {currentPage} </p>
         </nav>
     )
 
